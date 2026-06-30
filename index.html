@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ivan Cars — Autoservis, detailing a prodej vozů v Plzni</title>
+<meta name="description" content="Ivan Cars v Plzni: autoservis, opravy osobních automobilů, detailing, konzultace a prodej vozidel. Objednejte si službu nebo si domluvte konzultaci.">
+<meta property="og:title" content="Ivan Cars — Autoservis, detailing a prodej vozů v Plzni">
+<meta property="og:description" content="Komplexní péče o vaše auto: opravy, servis, detailing a pomoc s prodejem nebo výběrem vozidla. Jateční 12, Plzeň.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Poppins:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- =========================================================
+     0. PRELOADER  (brand intro — gold polish sweep over the wordmark)
+========================================================= -->
+<div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Načítání Ivan Cars">
+  <div class="preloader__inner">
+    <span class="preloader__word" aria-hidden="true">IVAN&nbsp;CARS</span>
+    <span class="preloader__line" aria-hidden="true"></span>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- =========================================================
+     1. HLAVIČKA / HEADER
+========================================================= -->
+<header class="nav" id="top">
+  <div class="container nav__inner">
+    <a href="#top" class="brand" aria-label="Ivan Cars">
+      <span class="brand__name">IVAN<span class="brand__gold">CARS</span></span>
+    </a>
+
+    <nav class="nav__menu" id="navMenu" aria-label="Hlavní navigace">
+      <button class="nav__close" id="navClose" type="button" aria-label="Zavřít menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <a href="#kontakty" class="nav__link">Kontakty</a>
+      <a href="#tym" class="nav__link">Tým</a>
+      <a href="#vyhody" class="nav__link">Výhody</a>
+      <a href="#objednavka" class="nav__link">Objednávka</a>
+
+      <div class="nav__menu-foot">
+        <a href="tel:+420777775574" class="nav__menu-phone">
+          <span class="nav__menu-phone-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A15 15 0 0 1 4.5 6a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="nav__menu-phone-txt"><small>Zavolat</small><strong>+420 777 775 574</strong></span>
+        </a>
+        <a href="#objednavka" class="btn btn--gold nav__menu-cta">
+          <span>Objednat službu</span>
+          <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </nav>
+
+    <div class="nav__actions">
+      <a href="tel:+420777775574" class="nav__phone">
+        <span class="nav__phone-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A15 15 0 0 1 4.5 6a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="nav__phone-txt"><small>Zavolat</small><strong>+420 777 775 574</strong></span>
+      </a>
+      <a href="#objednavka" class="btn btn--gold nav__cta">
+        <span>Objednat službu</span>
+        <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <button class="nav__burger" id="navBurger" aria-label="Otevřít menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- =========================================================
+     2. CTA BANNER / HERO  (poster headline + cinematic band)
+========================================================= -->
+<section class="hero" id="hero">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero__head">
+      <div class="hero__headline reveal">
+        <span class="eyebrow">
+          <svg class="eyebrow__star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c.6 4.7 2.7 6.8 7.4 7.4-4.7.6-6.8 2.7-7.4 7.4-.6-4.7-2.7-6.8-7.4-7.4C9.3 8.8 11.4 6.7 12 2Z" fill="currentColor"/></svg>
+          Autoservis · Detailing · Prodej vozů — Plzeň
+        </span>
+        <h1 class="hero__title">
+          <span class="hero__poster">IVAN <span class="gold">CARS</span></span>
+          <span class="hero__sub">— autoservis, detailing a prodej vozů v&nbsp;Plzni</span>
+        </h1>
+      </div>
+
+      <div class="hero__intro reveal" data-delay="120">
+        <p class="hero__lead">Komplexní služby pro vaše auto: opravy, servis, detailing, konzultace a pomoc s prodejem nebo výběrem vozidla.</p>
+        <p class="hero__text">Potřebujete opravit auto, objednat detailing nebo se poradit ohledně koupě či prodeje vozu? Kontaktujte nás a domluvte si termín nebo konzultaci.</p>
+        <div class="hero__actions">
+          <a href="#objednavka" class="btn btn--gold"><span>Objednat službu</span><span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          <a href="tel:+420777775574" class="btn btn--ghost"><span class="btn__lead-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A15 15 0 0 1 4.5 6a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span>Zavolat</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__band reveal" data-delay="160">
+      <img src="assets/SaveWeb2ZIP%20Website%20Copier/images/68b8255d2208bf105f05b5d6_home2-slider-img-01.jpg" alt="Prémiový detailing interiéru vozu v Ivan Cars Plzeň" loading="eager">
+      <div class="hero__card">
+        <img src="assets/SaveWeb2ZIP%20Website%20Copier/images/68c24ddfc6e82b968b8b48d7_home1-about1-bg-img.png" alt="Připravený vůz v servisu Ivan Cars">
+        <div class="hero__card-body">
+          <span class="hero__card-label">Servis Plzeň</span>
+          <span class="hero__card-title">Jateční 12</span>
+        </div>
+        <span class="hero__card-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     3. KONTAKTY  (layered images + content, Woshico "who we are")
+========================================================= -->
+<section class="section kontakty" id="kontakty">
+  <div class="container kontakty__grid">
+    <div class="layered reveal">
+      <div class="layered__main">
+        <img src="assets/SaveWeb2ZIP%20Website%20Copier/images/68cd3f34a9f10ca630242ddd_project-img-06.jpg" alt="Prémiový vůz v péči Ivan Cars" loading="lazy">
+      </div>
+      <div class="layered__sub">
+        <img src="assets/SaveWeb2ZIP%20Website%20Copier/images/68cd3f265789d87bba0e9747_project-img-05.jpg" alt="Detail karoserie a optiky vozu" loading="lazy">
+      </div>
+      <div class="layered__tag">
+        <span class="layered__tag-num">Plzeň</span>
+        <span class="layered__tag-label">Jateční 12 · autoservis</span>
+      </div>
+    </div>
+
+    <div class="kontakty__content reveal" data-delay="120">
+      <span class="eyebrow">
+        <svg class="eyebrow__star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c.6 4.7 2.7 6.8 7.4 7.4-4.7.6-6.8 2.7-7.4 7.4-.6-4.7-2.7-6.8-7.4-7.4C9.3 8.8 11.4 6.7 12 2Z" fill="currentColor"/></svg>
+        Kontakty
+      </span>
+      <h2 class="section__title">Kontaktujte Ivan Cars</h2>
+      <p class="section__text">Máte dotaz k opravě, servisu, detailingu nebo prodeji automobilu? Zavolejte nám nebo zanechte žádost — ozveme se vám zpět a domluvíme další postup.</p>
+
+      <div class="kontakty__people">
+        <div class="person">
+          <span class="avatar">IB</span>
+          <div class="person__info">
+            <h3 class="person__name">Ivan Bolishchuk</h3>
+            <ul class="person__links">
+              <li><a href="tel:+420777775574">+420 777 775 574</a></li>
+              <li><a href="mailto:ibahplzen@seznam.cz">ibahplzen@seznam.cz</a></li>
+              <li><a href="https://www.tiktok.com/@ivan.cars" target="_blank" rel="noopener">TikTok: @ivan.cars</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="person">
+          <span class="avatar">AV</span>
+          <div class="person__info">
+            <h3 class="person__name">Artem Vitryak</h3>
+            <ul class="person__links">
+              <li><a href="tel:+420777775375">+420 777 775 375</a></li>
+              <li class="person__static">Specializace: oprava osobních automobilů</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="kontakty__cta">
+        <a href="tel:+420777775574" class="btn btn--gold btn--sm">Zavolat</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Jate%C4%8Dn%C3%AD%2012%2C%20Plze%C5%88" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">Zobrazit trasu</a>
+        <a href="#objednavka" class="btn btn--line btn--sm">Zanechat žádost</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     4. TÝM
+========================================================= -->
+<section class="section tym" id="tym">
+  <div class="container">
+    <div class="tym__head reveal">
+      <div class="tym__head-main">
+        <h2 class="section__title">Tým Ivan Cars</h2>
+        <p class="section__text">Ivan Cars tvoří tým specialistů, kteří se věnují autoservisu, opravám osobních automobilů, detailingu a prodeji vozů. Ke každému zákazníkovi přistupujeme individuálně a pomáháme najít nejlepší řešení pro jeho auto.</p>
+      </div>
+      <div class="tym__head-aside">
+        <span class="eyebrow">
+          <svg class="eyebrow__star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c.6 4.7 2.7 6.8 7.4 7.4-4.7.6-6.8 2.7-7.4 7.4-.6-4.7-2.7-6.8-7.4-7.4C9.3 8.8 11.4 6.7 12 2Z" fill="currentColor"/></svg>
+          Tým
+        </span>
+      </div>
+    </div>
+
+    <div class="team__grid">
+      <article class="team-card reveal" data-delay="80">
+        <div class="team-card__media">
+          <img src="assets/Team%20Image%2004.jpg" alt="Konzultace a prodej vozů — Ivan Bolishchuk" loading="lazy">
+          <span class="team-card__tag">Konzultace · Prodej</span>
+        </div>
+        <div class="team-card__body">
+          <h3 class="team-card__name">Ivan Bolishchuk</h3>
+          <span class="team-card__role">Konzultace / prodej vozů / komunikace se zákazníky</span>
+          <p class="team-card__desc">Ivan se stará o komunikaci s klienty, konzultace, objednávky, rezervace termínů a prodej automobilů.</p>
+          <div class="team-card__contacts">
+            <a href="tel:+420777775574" class="chip">+420 777 775 574</a>
+            <a href="mailto:ibahplzen@seznam.cz" class="chip">ibahplzen@seznam.cz</a>
+            <a href="https://www.tiktok.com/@ivan.cars" target="_blank" rel="noopener" class="chip">TikTok: @ivan.cars</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="team-card reveal" data-delay="160">
+        <div class="team-card__media">
+          <img src="assets/Team%20Image%2001.jpg" alt="Autoservis a opravy — Artem Vitryak" loading="lazy">
+          <span class="team-card__tag">Autoservis · Opravy</span>
+        </div>
+        <div class="team-card__body">
+          <h3 class="team-card__name">Artem Vitryak</h3>
+          <span class="team-card__role">Autoservis / oprava osobních automobilů</span>
+          <p class="team-card__desc">Artem se specializuje na opravy osobních automobilů, servisní práce a technickou péči o vozidla.</p>
+          <div class="team-card__contacts">
+            <a href="tel:+420777775375" class="chip">+420 777 775 375</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     5. VÝHODY  (expanding service-card accordion — 1:1 Woshico)
+========================================================= -->
+<section class="section vyhody" id="vyhody">
+  <div class="container">
+    <div class="vyhody__head reveal">
+      <div class="vyhody__head-left">
+        <span class="eyebrow">
+          <svg class="eyebrow__star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c.6 4.7 2.7 6.8 7.4 7.4-4.7.6-6.8 2.7-7.4 7.4-.6-4.7-2.7-6.8-7.4-7.4C9.3 8.8 11.4 6.7 12 2Z" fill="currentColor"/></svg>
+          Výhody
+        </span>
+      </div>
+      <div class="vyhody__head-right">
+        <h2 class="vyhody__title">Proč zákazníci<br>volí Ivan Cars</h2>
+      </div>
+    </div>
+
+    <div class="vyhody-grid reveal" data-delay="120">
+
+      <!-- 01 -->
+      <a href="#objednavka" class="vcard" style="--i:0">
+        <div class="vcard__image" style="background-image:url('assets/SaveWeb2ZIP Website Copier/images/68cd3f265789d87bba0e9747_project-img-05.jpg')">
+          <span class="vcard__tag">
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m8 12 2.5 2.5L16 9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="vcard__tag-txt">Vše<i class="vcard__dot"></i>na jednom místě</span>
+          </span>
+          <div class="vcard__reveal">
+            <h3 class="vcard__title-light">Široká nabídka služeb</h3>
+            <p class="vcard__desc">Autoservis, opravy, detailing, konzultace, rezervace i prodej automobilů na jednom místě.</p>
+          </div>
+        </div>
+        <div class="vcard__face">
+          <span class="vcard__icon" aria-hidden="true"><img src="assets/SaveWeb2ZIP%20Website%20Copier/images/68d138432645a41e8a1a4827_service-icon-01.svg" alt="" loading="lazy"></span>
+          <h3 class="vcard__title">Široká nabídka služeb</h3>
+        </div>
+      </a>
+
+      <!-- 02 — active -->
+      <a href="#objednavka" class="vcard is-active" style="--i:1">
+        <div class="vcard__image" style="background-image:url('assets/SaveWeb2ZIP Website Copier/images/68cd3ef8e7c652504137893c_project-img-03.jpg')">
+          <span class="vcard__tag">
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2c.6 4.7 2.7 6.8 7.4 7.4-4.7.6-6.8 2.7-7.4 7.4-.6-4.7-2.7-6.8-7.4-7.4C9.3 8.8 11.4 6.7 12 2Z" fill="currentColor"/></svg>
+            <span class="vcard__tag-txt">Individuálně<i class="vcard__dot"></i>Pečlivě</span>
+          </span>
+          <div class="vcard__reveal">
+            <h3 class="vcard__title-light">Profesionální přístup</h3>
+            <p class="vcard__desc">Vysvětlíme vám, co je potřeba udělat, jaké jsou možnosti, a domluvíme vhodný postup pro vaše vozidlo.</p>
+          </div>
+        </div>
+        <div class="vcard__face">
+          <span class="vcard__icon" aria-hidden="true"><img src="assets/SaveWeb2ZIP%20Website%20Copier/images/68d1392787e77c05408af8c2_service-icon-02.svg" alt="" loading="lazy"></span>
+          <h3 class="vcard__title">Profesionální přístup</h3>
+        </div>
+      </a>
+
+      <!-- 03 -->
+      <a href="#objednavka" class="vcard" style="--i:2">
+        <div class="vcard__image" style="background-image:url('assets/SaveWeb2ZIP Website Copier/images/68cd3ecf5d9e85733c768325_project-img-01.jpg')">
+          <span class="vcard__tag">
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3 5 6v5c0 4.4 3 7.7 7 9 4-1.3 7-4.6 7-9V6l-7-3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="vcard__tag-txt">Detail<i class="vcard__dot"></i>Péče</span>
+          </span>
+          <div class="vcard__reveal">
+            <h3 class="vcard__title-light">Spolehlivost</h3>
+            <p class="vcard__desc">Ke každému vozidlu přistupujeme zodpovědně, pečlivě a s důrazem na detail.</p>
+          </div>
+        </div>
+        <div class="vcard__face">
+          <span class="vcard__icon" aria-hidden="true"><img src="assets/SaveWeb2ZIP%20Website%20Copier/images/68d13abc34e571042ecc9201_service-icon-03.svg" alt="" loading="lazy"></span>
+          <h3 class="vcard__title">Spolehlivost</h3>
+        </div>
+      </a>
+
+      <!-- 04 -->
+      <a href="#objednavka" class="vcard" style="--i:3">
+        <div class="vcard__image" style="background-image:url('assets/SaveWeb2ZIP Website Copier/images/68cd3f34a9f10ca630242ddd_project-img-06.jpg')">
+          <span class="vcard__tag">
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="m12 3 2.5 5.2L20 9l-4 4 1 5.6L12 16l-5 2.6L8 13 4 9l5.5-.8L12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <span class="vcard__tag-txt">Precizně<i class="vcard__dot"></i>Čistě</span>
+          </span>
+          <div class="vcard__reveal">
+            <h3 class="vcard__title-light">Kvalita</h3>
+            <p class="vcard__desc">Dbáme na precizní provedení práce, čistý výsledek a dlouhodobou spokojenost zákazníka.</p>
+          </div>
+        </div>
+        <div class="vcard__face">
+          <span class="vcard__icon" aria-hidden="true"><img src="assets/SaveWeb2ZIP%20Website%20Copier/images/68d13ad982a89161657d4ce0_service-icon-04.svg" alt="" loading="lazy"></span>
+          <h3 class="vcard__title">Kvalita</h3>
+        </div>
+      </a>
+
+      <!-- 05 -->
+      <a href="#objednavka" class="vcard" style="--i:4">
+        <div class="vcard__image" style="background-image:url('assets/SaveWeb2ZIP Website Copier/images/68b8255d2208bf105f05b5d6_home2-slider-img-01.jpg')">
+          <span class="vcard__tag">
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 22s7-6.4 7-12a7 7 0 1 0-14 0c0 5.6 7 12 7 12Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span class="vcard__tag-txt">Plzeň<i class="vcard__dot"></i>Jateční 12</span>
+          </span>
+          <div class="vcard__reveal">
+            <h3 class="vcard__title-light">Autoservis v Plzni</h3>
+            <p class="vcard__desc">Najdete nás na adrese Jateční 12 v Plzni — zastavte se nebo si domluvte termín.</p>
+          </div>
+        </div>
+        <div class="vcard__face">
+          <span class="vcard__icon" aria-hidden="true"><img src="assets/SaveWeb2ZIP%20Website%20Copier/images/68d13b174cb4d490804c8748_servie-icon-06.svg" alt="" loading="lazy"></span>
+          <h3 class="vcard__title">Autoservis v Plzni</h3>
+        </div>
+      </a>
+
+      <!-- 06 -->
+      <a href="#objednavka" class="vcard" style="--i:5">
+        <div class="vcard__image" style="background-image:url('assets/SaveWeb2ZIP Website Copier/images/68cd3f0965230295ab96f4d4_project-img-04.jpg')">
+          <span class="vcard__tag">
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M5 5h14v10H9l-4 4V5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 9h6M9 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <span class="vcard__tag-txt">Rychle<i class="vcard__dot"></i>Zpět</span>
+          </span>
+          <div class="vcard__reveal">
+            <h3 class="vcard__title-light">Rychlá komunikace</h3>
+            <p class="vcard__desc">Zavolejte nám, zanechte žádost nebo si domluvte konzultaci — ozveme se vám zpět.</p>
+          </div>
+        </div>
+        <div class="vcard__face">
+          <span class="vcard__icon" aria-hidden="true"><img src="assets/SaveWeb2ZIP%20Website%20Copier/images/68d13afc7b434668d41a4db7_service-icon-05.svg" alt="" loading="lazy"></span>
+          <h3 class="vcard__title">Rychlá komunikace</h3>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="vyhody__bottom reveal" data-delay="180">
+      <p class="vyhody__bottom-text">Neváhejte a kontaktujte nás — rádi vám pomůžeme a doporučíme nejlepší řešení.</p>
+      <a href="#objednavka" class="btn btn--gold">
+        <span>Objednat službu</span>
+        <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     6. CTA FORMA
+========================================================= -->
+<section class="section forma" id="objednavka">
+  <div class="forma__glow" aria-hidden="true"></div>
+  <div class="container forma__grid">
+    <div class="forma__intro reveal">
+      <span class="eyebrow">
+        <svg class="eyebrow__star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c.6 4.7 2.7 6.8 7.4 7.4-4.7.6-6.8 2.7-7.4 7.4-.6-4.7-2.7-6.8-7.4-7.4C9.3 8.8 11.4 6.7 12 2Z" fill="currentColor"/></svg>
+        Objednávka
+      </span>
+      <h2 class="section__title">Zanechte žádost o&nbsp;službu nebo konzultaci</h2>
+      <p class="section__text">Vyplňte krátký formulář a my se vám ozveme zpět. Upřesníme detaily, doporučíme vhodnou službu a domluvíme termín.</p>
+      <a href="tel:+420777775574" class="forma__phone">
+        <span class="forma__phone-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A15 15 0 0 1 4.5 6a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        <span>Nebo nám zavolejte přímo<br><strong>+420 777 775 574</strong></span>
+      </a>
+    </div>
+
+    <form class="forma__card reveal" data-delay="120" id="orderForm" novalidate>
+      <div class="field">
+        <label for="f-name">Jméno</label>
+        <input type="text" id="f-name" name="name" placeholder="Vaše jméno" required>
+      </div>
+      <div class="field">
+        <label for="f-phone">Telefon</label>
+        <input type="tel" id="f-phone" name="phone" placeholder="+420 ___ ___ ___" required>
+      </div>
+      <div class="field">
+        <label for="f-service">Typ služby</label>
+        <div class="select-wrap">
+          <select id="f-service" name="service" required>
+            <option value="" disabled selected>Vyberte službu</option>
+            <option>Autoservis</option>
+            <option>Oprava vozidla</option>
+            <option>Detailing</option>
+            <option>Prodej auta</option>
+            <option>Konzultace</option>
+            <option>Rezervace termínu</option>
+          </select>
+          <span class="select-wrap__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-message">Zpráva</label>
+        <textarea id="f-message" name="message" rows="4" placeholder="Popište, co potřebujete"></textarea>
+      </div>
+      <button type="submit" class="btn btn--gold btn--block"><span>Odeslat žádost</span><span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M4 12h15m0 0-6-6m6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+
+      <div class="forma__success" id="formSuccess" role="status" aria-live="polite" hidden>
+        <span class="forma__success-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m8 12 2.5 2.5L16 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div><strong>Žádost byla úspěšně odeslána.</strong><span>Brzy se vám ozveme a domluvíme další postup.</span></div>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- =========================================================
+     7. FOOTER
+========================================================= -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand reveal">
+      <a href="#top" class="brand brand--footer">
+        <span class="brand__name">IVAN<span class="brand__gold">CARS</span></span>
+      </a>
+      <p class="footer__tag">Autoservis, detailing a prodej automobilů v Plzni.</p>
+      <a href="#objednavka" class="btn btn--gold btn--sm">Objednat službu</a>
+    </div>
+
+    <div class="footer__col reveal" data-delay="60">
+      <h4 class="footer__title">Navigace</h4>
+      <ul class="footer__list">
+        <li><a href="#kontakty">Kontakty</a></li>
+        <li><a href="#tym">Tým</a></li>
+        <li><a href="#vyhody">Výhody</a></li>
+        <li><a href="#objednavka">Objednávka</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col reveal" data-delay="120">
+      <h4 class="footer__title">Kontakty</h4>
+      <ul class="footer__list">
+        <li><a href="tel:+420777775574">Ivan Bolishchuk — +420 777 775 574</a></li>
+        <li><a href="tel:+420777775375">Artem Vitryak — +420 777 775 375</a></li>
+        <li><a href="mailto:ibahplzen@seznam.cz">ibahplzen@seznam.cz</a></li>
+        <li><a href="https://www.tiktok.com/@ivan.cars" target="_blank" rel="noopener">TikTok: @ivan.cars</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col reveal" data-delay="180">
+      <h4 class="footer__title">Adresa</h4>
+      <p class="footer__addr">Servis Plzeň, Jateční 12<br>Plzeň, Česká republika</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Jate%C4%8Dn%C3%AD%2012%2C%20Plze%C5%88" target="_blank" rel="noopener" class="footer__maplink">Zobrazit trasu</a>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <span>© <span id="year">2026</span> Ivan Cars. Všechna práva vyhrazena.</span>
+    <span class="footer__loc">Plzeň · Česká republika</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
