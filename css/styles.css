@@ -17,7 +17,7 @@
   --line-soft:rgba(255,255,255,.08);
 
   --container:1320px;
-  --pad:24px;
+  --pad:90px;
   --radius:24px;
   --radius-sm:16px;
 
@@ -545,6 +545,7 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
    Responsive
 ========================================================= */
 @media (max-width:1024px){
+  :root{--pad:48px}
   .hero__head{grid-template-columns:1fr;align-items:start;gap:22px}
   .hero__sub{max-width:none}
   .kontakty__grid,.forma__grid{grid-template-columns:1fr}
