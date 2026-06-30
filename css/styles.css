@@ -16,7 +16,7 @@
   --line:rgba(217,154,50,.24);
   --line-soft:rgba(255,255,255,.08);
 
-  --container:1320px;
+  --container:1760px;
   --pad:90px;
   --radius:24px;
   --radius-sm:16px;
@@ -457,10 +457,11 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
 ========================================================= */
 .nabidka{position:relative;overflow:hidden}
 .nabidka__glow{position:absolute;right:-10%;top:2%;width:46vw;height:46vw;max-width:600px;max-height:600px;background:radial-gradient(circle,rgba(217,154,50,.15),transparent 62%);filter:blur(20px);pointer-events:none;z-index:-1}
-.nabidka__grid{display:grid;grid-template-columns:1fr 1.04fr;gap:clamp(40px,6vw,88px);align-items:center}
-.nabidka__content{max-width:600px}
+.nabidka__grid{display:grid;grid-template-columns:1fr 1.04fr;gap:clamp(40px,5vw,80px);align-items:center}
+.nabidka__content{max-width:680px}
 .nabidka .eyebrow{margin-bottom:14px}
-.nabidka .section__text{margin-top:16px}
+.nabidka__title{text-wrap:balance}
+.nabidka .section__text{margin-top:18px;max-width:52ch}
 
 .nabidka__points{display:flex;flex-direction:column;gap:12px;margin-top:28px}
 .nabidka__point{display:flex;align-items:center;gap:14px;font-size:1rem;color:var(--light)}
