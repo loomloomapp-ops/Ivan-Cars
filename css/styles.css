@@ -452,6 +452,44 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
 /* =========================================================
    6. CTA FORMA
 ========================================================= */
+/* =========================================================
+   5B. NABÍDKA VOZŮ — odkaz na profil prodejce Sauto.cz
+========================================================= */
+.nabidka{position:relative;overflow:hidden}
+.nabidka__glow{position:absolute;right:-10%;top:2%;width:46vw;height:46vw;max-width:600px;max-height:600px;background:radial-gradient(circle,rgba(217,154,50,.15),transparent 62%);filter:blur(20px);pointer-events:none;z-index:-1}
+.nabidka__grid{display:grid;grid-template-columns:1fr 1.04fr;gap:clamp(40px,6vw,88px);align-items:center}
+.nabidka__content{max-width:600px}
+.nabidka .eyebrow{margin-bottom:14px}
+.nabidka .section__text{margin-top:16px}
+
+.nabidka__points{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.nabidka__point{display:flex;align-items:center;gap:14px;font-size:1rem;color:var(--light)}
+.nabidka__point-ic{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--gold-soft);color:var(--gold);flex:none}
+
+.nabidka__cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;margin-top:34px}
+.nabidka__profile{display:flex;flex-direction:column;line-height:1.25}
+.nabidka__profile-label{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.nabidka__profile-url{font-family:var(--font-display);font-weight:600;color:var(--gold);transition:color .3s var(--ease)}
+.nabidka__profile:hover .nabidka__profile-url{color:var(--light)}
+
+.nabidka__media{position:relative;display:block;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 50px 90px -45px rgba(0,0,0,.85)}
+.nabidka__media img{width:100%;height:clamp(360px,42vw,520px);object-fit:cover;filter:contrast(1.05) brightness(.86);transition:transform 1.1s var(--ease)}
+.nabidka__media:hover img{transform:scale(1.06)}
+.nabidka__media::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(5,5,5,.04) 38%,rgba(5,5,5,.8))}
+
+.nabidka__badge{position:absolute;top:18px;left:18px;z-index:2;display:inline-flex;align-items:center;gap:11px;padding:10px 16px;border-radius:14px;background:rgba(8,8,8,.66);backdrop-filter:blur(8px);border:1px solid var(--line)}
+.nabidka__badge-ic{display:grid;place-items:center;color:var(--gold);flex:none}
+.nabidka__badge-txt{display:flex;flex-direction:column;line-height:1.2;font-size:.78rem;color:var(--muted)}
+.nabidka__badge-txt strong{font-family:var(--font-display);font-size:.98rem;color:var(--light)}
+
+.nabidka__media-foot{position:absolute;left:18px;right:18px;bottom:18px;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.nabidka__media-foot-txt{font-family:var(--font-display);font-weight:600;font-size:1.06rem;color:var(--light)}
+.nabidka__media-foot-ic{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#190f04;flex:none;transition:transform .4s var(--ease)}
+.nabidka__media:hover .nabidka__media-foot-ic{transform:translate(3px,-3px)}
+
+/* =========================================================
+   6. CTA FORMA
+========================================================= */
 .forma{overflow:visible}
 .forma__glow{position:absolute;left:-8%;bottom:-22%;width:50vw;height:50vw;max-width:660px;max-height:660px;background:radial-gradient(circle,rgba(217,154,50,.16),transparent 62%);filter:blur(20px);pointer-events:none;z-index:-1}
 .forma__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,80px);align-items:start}
@@ -510,6 +548,8 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
   .hero__head{grid-template-columns:1fr;align-items:start;gap:22px}
   .hero__sub{max-width:none}
   .kontakty__grid,.forma__grid{grid-template-columns:1fr}
+  .nabidka__grid{grid-template-columns:1fr;gap:clamp(28px,5vw,44px)}
+  .nabidka__content{max-width:none}
   .forma__intro{position:static}
   .tym__head{grid-template-columns:1fr;gap:6px}
   .tym__head-aside{justify-content:flex-start;order:-1}
@@ -594,6 +634,11 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
 
   .team__grid{grid-template-columns:1fr}
 
+  /* ---- nabídka vozů: tighter media + stacked CTA ---- */
+  .nabidka__media img{height:clamp(240px,60vw,320px)}
+  .nabidka__media-foot-txt{font-size:.98rem}
+  .nabidka__cta{margin-top:28px;gap:16px}
+
   /* ---- vyhody: full-width CTA under the cards ---- */
   .vyhody__bottom{flex-direction:column}
   .vyhody__bottom .btn{width:100%;justify-content:center}
@@ -608,7 +653,7 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
 }
 
 @media (max-width:520px){
-  .hero__actions .btn,.kontakty__cta .btn{width:100%;justify-content:center}
+  .hero__actions .btn,.kontakty__cta .btn,.nabidka__cta .btn{width:100%;justify-content:center}
   .hero__mini{grid-template-columns:1fr}
   .vyhody-grid{grid-template-columns:1fr}
   .footer__grid{grid-template-columns:1fr}
