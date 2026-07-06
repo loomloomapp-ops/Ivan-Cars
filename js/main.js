@@ -83,12 +83,22 @@
     reveals.forEach(function (el) { el.classList.add("is-in"); });
   }
 
-  /* ---- Před / Po gallery: filter by service category ---- */
+  /* ---- Před / Po gallery: service tabs ---- */
   var predpoFilters = document.getElementById("predpoFilters");
   var predpoGrid = document.getElementById("predpoGrid");
   if (predpoFilters && predpoGrid) {
     var predpoChips = predpoFilters.querySelectorAll(".filter-chip");
     var predpoEmpty = document.getElementById("predpoEmpty");
+    var applyPredpoFilter = function (filter) {
+      var shown = 0;
+      predpoGrid.querySelectorAll(".predpo-card").forEach(function (card) {
+        var cats = (card.getAttribute("data-cat") || "").split(/\s+/);
+        var show = cats.indexOf(filter) !== -1;
+        card.hidden = !show;
+        if (show) shown++;
+      });
+      if (predpoEmpty) predpoEmpty.hidden = shown !== 0;
+    };
     predpoChips.forEach(function (chip) {
       chip.addEventListener("click", function () {
         predpoChips.forEach(function (c) {
@@ -96,17 +106,11 @@
           c.classList.toggle("is-active", active);
           c.setAttribute("aria-pressed", active ? "true" : "false");
         });
-        var filter = chip.getAttribute("data-filter");
-        var shown = 0;
-        predpoGrid.querySelectorAll(".predpo-card").forEach(function (card) {
-          var cats = (card.getAttribute("data-cat") || "").split(/\s+/);
-          var show = filter === "all" || cats.indexOf(filter) !== -1;
-          card.hidden = !show;
-          if (show) shown++;
-        });
-        if (predpoEmpty) predpoEmpty.hidden = shown !== 0;
+        applyPredpoFilter(chip.getAttribute("data-filter"));
       });
     });
+    var predpoInit = predpoFilters.querySelector(".filter-chip.is-active");
+    if (predpoInit) applyPredpoFilter(predpoInit.getAttribute("data-filter"));
   }
 
   /* ---- Order form ---- */

@@ -42,9 +42,9 @@
       </button>
       <a href="#kontakty" class="nav__link">Kontakty</a>
       <a href="#nabidka" class="nav__link">Nabídka vozů</a>
+      <a href="#predpo" class="nav__link">Před / Po</a>
       <a href="#tym" class="nav__link">Tým</a>
       <a href="#vyhody" class="nav__link">Výhody</a>
-      <a href="#predpo" class="nav__link">Před / Po</a>
       <a href="#objednavka" class="nav__link">Objednávka</a>
 
       <div class="nav__menu-foot">
@@ -234,7 +234,70 @@
 </section>
 
 <!-- =========================================================
-     5. TÝM
+     5. PŘED / PO  (naše práce — taby podle služby)
+========================================================= -->
+<section class="section predpo" id="predpo">
+  <div class="container">
+    <div class="predpo__head reveal">
+      <span class="eyebrow">
+        <svg class="eyebrow__star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c.6 4.7 2.7 6.8 7.4 7.4-4.7.6-6.8 2.7-7.4 7.4-.6-4.7-2.7-6.8-7.4-7.4C9.3 8.8 11.4 6.7 12 2Z" fill="currentColor"/></svg>
+        Naše práce
+      </span>
+      <h2 class="section__title">Před / Po — výsledky naší práce</h2>
+      <p class="section__text">Vyberte službu a prohlédněte si, jak vypadala auta před naší prací a po ní.</p>
+    </div>
+
+    <div class="predpo__filters reveal" data-delay="80" id="predpoFilters" role="group" aria-label="Vybrat službu">
+      <button type="button" class="filter-chip is-active" data-filter="oprava" aria-pressed="true">Oprava aut</button>
+      <button type="button" class="filter-chip" data-filter="polep" aria-pressed="false">Polep oken a světlometů</button>
+      <button type="button" class="filter-chip" data-filter="detailing" aria-pressed="false">Detailing</button>
+      <button type="button" class="filter-chip" data-filter="calounik" aria-pressed="false">Auto čalouník</button>
+    </div>
+
+    <div class="predpo__grid reveal" data-delay="140" id="predpoGrid">
+
+      <figure class="predpo-card predpo-card--pair" data-cat="oprava">
+        <div class="predpo-card__pair">
+          <div class="predpo-card__half">
+            <img src="assets/do-po/oprava-01-pred.jpg" alt="Poškozená přední část vozu před opravou" loading="lazy">
+            <span class="predpo-card__stamp">Před</span>
+          </div>
+          <div class="predpo-card__half">
+            <img src="assets/do-po/oprava-01-po.jpg" alt="Vůz po opravě přední části v Ivan Cars" loading="lazy">
+            <span class="predpo-card__stamp predpo-card__stamp--po">Po</span>
+          </div>
+        </div>
+        <figcaption class="predpo-card__body">
+          <h3 class="predpo-card__title">Oprava přední části vozu</h3>
+          <span class="predpo-card__cat">Oprava aut</span>
+        </figcaption>
+      </figure>
+
+      <figure class="predpo-card predpo-card--pair" data-cat="polep" hidden>
+        <div class="predpo-card__pair">
+          <div class="predpo-card__half">
+            <img src="assets/do-po/polep-01-pred.jpg" alt="Boční okna vozu před tónováním" loading="lazy">
+            <span class="predpo-card__stamp">Před</span>
+          </div>
+          <div class="predpo-card__half">
+            <img src="assets/do-po/polep-01-po.jpg" alt="Vůz s tónovanými bočními okny po polepu" loading="lazy">
+            <span class="predpo-card__stamp predpo-card__stamp--po">Po</span>
+          </div>
+        </div>
+        <figcaption class="predpo-card__body">
+          <h3 class="predpo-card__title">Tónování bočních oken</h3>
+          <span class="predpo-card__cat">Polep oken</span>
+        </figcaption>
+      </figure>
+
+    </div>
+
+    <p class="predpo__empty" id="predpoEmpty" hidden>Fotografie z této kategorie právě připravujeme. Zastavte se u nás na Jateční 12 v Plzni — rádi vám naši práci ukážeme osobně.</p>
+  </div>
+</section>
+
+<!-- =========================================================
+     6. TÝM
 ========================================================= -->
 <section class="section tym" id="tym">
   <div class="container">
@@ -288,7 +351,7 @@
 </section>
 
 <!-- =========================================================
-     6. VÝHODY  (expanding service-card accordion — 1:1 Woshico)
+     7. VÝHODY  (expanding service-card accordion — 1:1 Woshico)
 ========================================================= -->
 <section class="section vyhody" id="vyhody">
   <div class="container">
@@ -427,77 +490,6 @@
 </section>
 
 <!-- =========================================================
-     7. PŘED / PO  (galerie výsledků s filtrem podle služby)
-========================================================= -->
-<section class="section predpo" id="predpo">
-  <div class="container">
-    <div class="predpo__head reveal">
-      <span class="eyebrow">
-        <svg class="eyebrow__star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c.6 4.7 2.7 6.8 7.4 7.4-4.7.6-6.8 2.7-7.4 7.4-.6-4.7-2.7-6.8-7.4-7.4C9.3 8.8 11.4 6.7 12 2Z" fill="currentColor"/></svg>
-        Naše práce
-      </span>
-      <h2 class="section__title">Před / Po — výsledky naší práce</h2>
-      <p class="section__text">Podívejte se, jak vypadají auta po naší péči. Fotografie si můžete filtrovat podle typu služby.</p>
-    </div>
-
-    <div class="predpo__filters reveal" data-delay="80" id="predpoFilters" role="group" aria-label="Filtrovat fotografie podle služby">
-      <button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true">Vše</button>
-      <button type="button" class="filter-chip" data-filter="oprava" aria-pressed="false">Oprava aut</button>
-      <button type="button" class="filter-chip" data-filter="polep" aria-pressed="false">Polep oken a světlometů</button>
-      <button type="button" class="filter-chip" data-filter="detailing" aria-pressed="false">Detailing</button>
-      <button type="button" class="filter-chip" data-filter="calounik" aria-pressed="false">Auto čalouník</button>
-    </div>
-
-    <div class="predpo__grid reveal" data-delay="140" id="predpoGrid">
-
-      <figure class="predpo-card" data-cat="oprava">
-        <div class="predpo-card__media">
-          <img src="assets/ivancars/Oprava%20auta.jpeg" alt="Autoservis Ivan Cars — pneuservis, plnění klimatizace, detailing a tónování autoskel" loading="lazy">
-        </div>
-        <figcaption class="predpo-card__body">
-          <h3 class="predpo-card__title">Oprava a servis vozidel</h3>
-          <span class="predpo-card__cat">Oprava aut</span>
-        </figcaption>
-      </figure>
-
-      <figure class="predpo-card" data-cat="detailing polep">
-        <div class="predpo-card__media">
-          <img src="assets/ivancars/Detailing.jpeg" alt="Ivan Cars — detailing aut a polep okenních folií" loading="lazy">
-        </div>
-        <figcaption class="predpo-card__body">
-          <h3 class="predpo-card__title">Detailing a polep okenních folií</h3>
-          <span class="predpo-card__cat">Detailing · Polep</span>
-        </figcaption>
-      </figure>
-
-      <!-- Šablona karty s dvojicí fotografií „Před / Po" — stačí doplnit
-           vlastní snímky a kategorii (data-cat: oprava | polep | detailing | calounik):
-
-      <figure class="predpo-card predpo-card--pair" data-cat="detailing">
-        <div class="predpo-card__pair">
-          <div class="predpo-card__half">
-            <img src="assets/ivancars/foto-pred.jpg" alt="Stav vozu před detailingem" loading="lazy">
-            <span class="predpo-card__stamp">Před</span>
-          </div>
-          <div class="predpo-card__half">
-            <img src="assets/ivancars/foto-po.jpg" alt="Stav vozu po detailingu" loading="lazy">
-            <span class="predpo-card__stamp predpo-card__stamp--po">Po</span>
-          </div>
-        </div>
-        <figcaption class="predpo-card__body">
-          <h3 class="predpo-card__title">Kompletní detailing interiéru</h3>
-          <span class="predpo-card__cat">Detailing</span>
-        </figcaption>
-      </figure>
-      -->
-
-    </div>
-
-    <p class="predpo__empty" id="predpoEmpty" hidden>Fotografie z této kategorie právě připravujeme. Zastavte se u nás na Jateční 12 v Plzni — rádi vám naši práci ukážeme osobně.</p>
-  </div>
-</section>
-
-<!-- =========================================================
      8. CTA FORMA
 ========================================================= -->
 <section class="section forma" id="objednavka">
@@ -576,9 +568,9 @@
       <ul class="footer__list">
         <li><a href="#kontakty">Kontakty</a></li>
         <li><a href="#nabidka">Nabídka vozů</a></li>
+        <li><a href="#predpo">Před / Po</a></li>
         <li><a href="#tym">Tým</a></li>
         <li><a href="#vyhody">Výhody</a></li>
-        <li><a href="#predpo">Před / Po</a></li>
         <li><a href="#objednavka">Objednávka</a></li>
       </ul>
     </div>
