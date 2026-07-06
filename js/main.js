@@ -83,6 +83,32 @@
     reveals.forEach(function (el) { el.classList.add("is-in"); });
   }
 
+  /* ---- Před / Po gallery: filter by service category ---- */
+  var predpoFilters = document.getElementById("predpoFilters");
+  var predpoGrid = document.getElementById("predpoGrid");
+  if (predpoFilters && predpoGrid) {
+    var predpoChips = predpoFilters.querySelectorAll(".filter-chip");
+    var predpoEmpty = document.getElementById("predpoEmpty");
+    predpoChips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        predpoChips.forEach(function (c) {
+          var active = c === chip;
+          c.classList.toggle("is-active", active);
+          c.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+        var filter = chip.getAttribute("data-filter");
+        var shown = 0;
+        predpoGrid.querySelectorAll(".predpo-card").forEach(function (card) {
+          var cats = (card.getAttribute("data-cat") || "").split(/\s+/);
+          var show = filter === "all" || cats.indexOf(filter) !== -1;
+          card.hidden = !show;
+          if (show) shown++;
+        });
+        if (predpoEmpty) predpoEmpty.hidden = shown !== 0;
+      });
+    });
+  }
+
   /* ---- Order form ---- */
   var form = document.getElementById("orderForm");
   var success = document.getElementById("formSuccess");

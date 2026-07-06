@@ -469,8 +469,9 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
 
 .nabidka__cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;margin-top:34px}
 
-.nabidka__media{position:relative;display:block;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 50px 90px -45px rgba(0,0,0,.85)}
-.nabidka__media img{width:100%;height:clamp(360px,42vw,520px);object-fit:cover;filter:contrast(1.05) brightness(.86);transition:transform 1.1s var(--ease)}
+.nabidka__media{position:relative;display:block;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:#000;box-shadow:0 50px 90px -45px rgba(0,0,0,.85)}
+/* čtvercové logo na černém podkladu — contain, ať se nic neořezává */
+.nabidka__media img{width:100%;height:clamp(360px,42vw,520px);object-fit:contain;filter:contrast(1.03);transition:transform 1.1s var(--ease)}
 .nabidka__media:hover img{transform:scale(1.06)}
 .nabidka__media::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(5,5,5,.04) 38%,rgba(5,5,5,.8))}
 
@@ -483,6 +484,59 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
 .nabidka__media-foot-txt{font-family:var(--font-display);font-weight:600;font-size:1.06rem;color:var(--light)}
 .nabidka__media-foot-ic{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#190f04;flex:none;transition:transform .4s var(--ease)}
 .nabidka__media:hover .nabidka__media-foot-ic{transform:translate(3px,-3px)}
+
+/* =========================================================
+   5C. PŘED / PO — galerie výsledků s filtrem podle služby
+========================================================= */
+.predpo__head{max-width:780px;margin-bottom:clamp(26px,3.4vw,42px)}
+
+.predpo__filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:clamp(24px,3vw,36px)}
+.filter-chip{
+  font-family:var(--font-display);font-weight:600;font-size:.9rem;color:var(--muted);
+  background:rgba(255,255,255,.04);border:1px solid var(--line-soft);border-radius:999px;
+  padding:11px 20px;cursor:pointer;
+  transition:color .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease),transform .3s var(--ease);
+}
+.filter-chip:hover{border-color:var(--gold);color:var(--gold)}
+.filter-chip:active{transform:scale(.97)}
+.filter-chip.is-active{background:linear-gradient(135deg,var(--gold),var(--gold-2));border-color:transparent;color:#190f04}
+
+.predpo__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3vw,34px)}
+.predpo-card{
+  border-radius:var(--radius);overflow:hidden;background:var(--graphite);border:1px solid var(--line-soft);
+  transition:transform .45s var(--ease),border-color .45s var(--ease);
+}
+.predpo-card:hover{transform:translateY(-6px);border-color:var(--line)}
+.predpo-card[hidden]{display:none}
+.predpo-card__media{position:relative;overflow:hidden}
+.predpo-card__media img{width:100%;aspect-ratio:3/2;height:auto;object-fit:cover;filter:contrast(1.04) brightness(.96);transition:transform 1s var(--ease)}
+.predpo-card:hover .predpo-card__media img,
+.predpo-card:hover .predpo-card__half img{transform:scale(1.05)}
+
+/* varianta karty se dvojicí snímků Před / Po */
+.predpo-card__pair{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-soft)}
+.predpo-card__half{position:relative;overflow:hidden}
+.predpo-card__half img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;filter:contrast(1.04) brightness(.96);transition:transform 1s var(--ease)}
+.predpo-card__stamp{
+  position:absolute;left:12px;bottom:12px;z-index:2;
+  font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  padding:6px 12px;border-radius:999px;background:rgba(8,8,8,.66);backdrop-filter:blur(6px);
+  border:1px solid var(--line-soft);color:var(--light);
+}
+.predpo-card__stamp--po{background:linear-gradient(135deg,var(--gold),var(--gold-2));border-color:transparent;color:#190f04}
+
+.predpo-card__body{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:20px 24px}
+.predpo-card__title{font-family:var(--font-display);font-weight:600;font-size:1.12rem;letter-spacing:-.01em}
+.predpo-card__cat{
+  flex:none;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:7px 14px;border-radius:999px;background:var(--gold-soft);border:1px solid var(--line);
+  color:var(--gold);white-space:nowrap;
+}
+
+.predpo__empty{
+  margin-top:clamp(22px,3vw,34px);padding:clamp(24px,3vw,36px);text-align:center;
+  border:1px dashed var(--line);border-radius:var(--radius-sm);color:var(--muted);
+}
 
 /* =========================================================
    6. CTA FORMA
@@ -510,6 +564,7 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
 .select-wrap__ic{position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--gold);pointer-events:none}
 
 .forma__success{display:flex;align-items:center;gap:14px;margin-top:4px;padding:18px 20px;border-radius:14px;background:var(--gold-soft);border:1px solid var(--line);color:var(--gold);animation:pop .5s var(--ease)}
+.forma__success[hidden]{display:none}
 .forma__success strong{display:block;color:var(--light);font-family:var(--font-display)}
 .forma__success span{font-size:.9rem;color:var(--muted)}
 .forma__success-ic{flex:none}
@@ -635,20 +690,27 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
   /* ---- nabídka vozů: image under the heading, then text + points + CTA ---- */
   .nabidka__grid{display:flex;flex-direction:column;align-items:flex-start;gap:0}
   .nabidka__content{display:contents}
-  .nabidka .eyebrow{order:1;margin-bottom:8px}
+  .nabidka .eyebrow{order:1;margin-bottom:6px}
   .nabidka__title{order:2}
-  .nabidka__media{order:3;margin-top:22px}
-  .nabidka .section__text{order:4;margin-top:22px}
-  .nabidka__points{order:5;margin-top:24px}
-  .nabidka__cta{order:6;margin-top:28px;gap:16px}
+  .nabidka__media{order:3;margin-top:18px}
+  .nabidka .section__text{order:4;margin-top:16px}
+  .nabidka__points{order:5;margin-top:20px;gap:10px}
+  .nabidka__cta{order:6;margin-top:24px;gap:12px}
   /* flex-column does not stretch children -> force full width */
   .nabidka__title,
   .nabidka .section__text,
   .nabidka__media,
   .nabidka__points,
   .nabidka__cta{width:100%}
-  .nabidka__media img{height:clamp(240px,60vw,320px)}
+  .nabidka__media img{height:clamp(220px,58vw,300px)}
   .nabidka__media-foot-txt{font-size:.98rem}
+
+  /* ---- před / po: single column, compact chips + card body ---- */
+  .predpo__head{margin-bottom:20px}
+  .predpo__filters{gap:8px;margin-bottom:20px}
+  .filter-chip{padding:10px 16px;font-size:.85rem}
+  .predpo__grid{grid-template-columns:1fr;gap:18px}
+  .predpo-card__body{flex-wrap:wrap;gap:10px;padding:18px 20px}
 
   /* ---- vyhody: full-width CTA under the cards ---- */
   .vyhody__bottom{flex-direction:column}
