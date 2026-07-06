@@ -510,20 +510,40 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
 .predpo-card[hidden]{display:none}
 .predpo-card__media{position:relative;overflow:hidden}
 .predpo-card__media img{width:100%;aspect-ratio:3/2;height:auto;object-fit:cover;filter:contrast(1.04) brightness(.96);transition:transform 1s var(--ease)}
-.predpo-card:hover .predpo-card__media img,
-.predpo-card:hover .predpo-card__half img{transform:scale(1.05)}
+.predpo-card:hover .predpo-card__media img{transform:scale(1.05)}
 
-/* varianta karty se dvojicí snímků Před / Po */
-.predpo-card__pair{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-soft)}
-.predpo-card__half{position:relative;overflow:hidden}
-.predpo-card__half img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:contrast(1.04) brightness(.96);transition:transform 1s var(--ease)}
+/* posuvné srovnání Před / Po — tažením ukazujete stav před a po */
+.ba{position:relative;overflow:hidden;--pos:50%;background:var(--graphite-2)}
+.ba__after{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;filter:contrast(1.04) brightness(.96)}
+.ba__before{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.ba__before img{width:100%;height:100%;object-fit:cover;filter:contrast(1.04) brightness(.96)}
+
+.ba__line{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:var(--gold);z-index:2;pointer-events:none}
+.ba__grip{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  display:grid;place-items:center;width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#190f04;
+  box-shadow:0 8px 22px rgba(0,0,0,.5);
+}
+
+/* neviditelný range přes celou plochu — nativní tažení myší, dotykem i klávesnicí */
+.ba__range{
+  position:absolute;inset:0;z-index:3;width:100%;height:100%;margin:0;padding:0;
+  opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none;background:transparent;
+}
+.ba__range::-webkit-slider-runnable-track{height:100%;background:transparent}
+.ba__range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:44px;height:100%;background:transparent;border:0}
+.ba__range::-moz-range-track{height:100%;background:transparent}
+.ba__range::-moz-range-thumb{width:44px;height:100%;background:transparent;border:0;border-radius:0}
+.ba:has(.ba__range:focus-visible) .ba__grip{outline:2px solid var(--light);outline-offset:3px}
+
 .predpo-card__stamp{
-  position:absolute;left:12px;bottom:12px;z-index:2;
+  position:absolute;left:14px;bottom:14px;z-index:2;pointer-events:none;
   font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
   padding:6px 12px;border-radius:999px;background:rgba(8,8,8,.66);backdrop-filter:blur(6px);
   border:1px solid var(--line-soft);color:var(--light);
 }
-.predpo-card__stamp--po{background:linear-gradient(135deg,var(--gold),var(--gold-2));border-color:transparent;color:#190f04}
+.predpo-card__stamp--po{left:auto;right:14px;background:linear-gradient(135deg,var(--gold),var(--gold-2));border-color:transparent;color:#190f04}
 
 .predpo-card__body{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:20px 24px}
 .predpo-card__title{font-family:var(--font-display);font-weight:600;font-size:1.12rem;letter-spacing:-.01em}

@@ -113,6 +113,15 @@
     if (predpoInit) applyPredpoFilter(predpoInit.getAttribute("data-filter"));
   }
 
+  /* ---- Před / Po comparison sliders ---- */
+  document.querySelectorAll(".ba").forEach(function (ba) {
+    var range = ba.querySelector(".ba__range");
+    if (!range) return;
+    var update = function () { ba.style.setProperty("--pos", range.value + "%"); };
+    range.addEventListener("input", update);
+    update();
+  });
+
   /* ---- Order form ---- */
   var form = document.getElementById("orderForm");
   var success = document.getElementById("formSuccess");
