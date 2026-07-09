@@ -262,6 +262,11 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
 .hero__band::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(5,5,5,.5),transparent 45%,rgba(5,5,5,.35))}
 .hero__band:hover>img{transform:scale(1.04)}
 
+/* Poster banner: show the full designed image, no crop, no darkening overlay */
+.hero__band--poster>img{height:auto;object-fit:contain;filter:none}
+.hero__band--poster::after{display:none}
+.hero__band--poster:hover>img{transform:none}
+
 .hero__card{
   position:absolute;top:22px;right:22px;z-index:2;width:min(300px,42%);
   background:rgba(8,8,8,.72);backdrop-filter:blur(10px);
@@ -290,7 +295,7 @@ html.pl-lock,html.pl-lock body{overflow:hidden}
 .kontakty .section__title{margin-bottom:0}
 .kontakty .section__text{margin-top:12px}
 
-.layered{position:relative;padding-bottom:48px;padding-right:40px}
+.layered{position:relative}
 .layered__main{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-soft)}
 .layered__main img{width:100%;height:clamp(360px,40vw,500px);object-fit:cover;filter:contrast(1.05) brightness(.9)}
 .layered__sub{
